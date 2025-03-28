@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View all accommodations</title>
+  </head>
+  <body>
+    <h1>Showing all accommodations</h1>
+    <p>Number of accommodations: {{ accommodations | length }}</p>
+    <ul>
+      {% for accommodation in accommodations %}
+      <li>{{ accommodation.type }}: {{ accommodation.address }}</li>
+      {% empty %}
+      <li>No order yet.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
