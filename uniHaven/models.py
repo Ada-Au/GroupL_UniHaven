@@ -16,8 +16,9 @@ class PropertyOwner(models.Model):
     def __str__(self):
         return self.name
 
-class Accommodation(models.Model): # Do we need a name for the accommodation? For editing and view
+class Accommodation(models.Model):
     id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
     type = models.CharField(max_length=50) # should this be enum?
     availablePeriodStart = models.DateField()
     availablePeriodEnd = models.DateField()
@@ -41,3 +42,7 @@ class Reservations(models.Model): # What happens when multiple member make a res
     rating = models.FloatField(blank=True, null=True)
     def __str__(self):
         return f'{self.accommodation.type} by {self.member.name}'
+
+# superUser
+# user name: groupl
+# password: 1
